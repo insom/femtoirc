@@ -3,7 +3,7 @@ femtoirc
 
 An extremely small IRC client that really just responds to PINGs and logs in.
 
-Design to run under tmux with one pane for reading and one for writing.
+Designed to run under tmux with one pane for reading and one for writing.
 
 ```
 make
@@ -12,6 +12,18 @@ make
 ![Screenshot](https://github.com/insom/femtoirc/blob/main/shot.png?raw=true)
 
 To "chat" just `cat` or `echo` valid RFC 1459 commands to the pipe in the same directory.
+
+If you `tmux` you probably want something like
+
+```
+bind-key -n S-Left "select-pane -L"
+bind-key -n S-Down "select-pane -D"
+bind-key -n S-Up "select-pane -U"
+bind-key -n S-Right "select-pane -R"
+set -g mouse
+```
+
+to keeps things even remotely ergonomic as you move between panes.
 
 License
 -------
